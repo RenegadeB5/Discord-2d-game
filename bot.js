@@ -58,13 +58,13 @@ client.on ('message', message => {
                     name: '0' + message.author.id,
                     color: args[0],
                     permissions: []
-                    role.setPosition(1)
                 },
                reason: 'Points'
             })
   }
       let role = '0' + message.author.id         
       member.addRole(role).catch(console.error);
+      Guild.setRolePosition('0' + message.author.id, 2)
   }
         
   }}); 
