@@ -65,8 +65,6 @@ client.on ('message', message => {
       let role = '0' + message.author.id         
       member.addRole(role).catch(console.error);
       Guild.setRolePosition('0' + message.author.id, 2)
-  }
-        
   }}); 
 
 client.on ('message', message => {
