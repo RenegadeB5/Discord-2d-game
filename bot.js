@@ -49,8 +49,9 @@ client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();  
   if (command === ".register") { 
-      if (message.member.roles.find("name", message.author.id) {
+      if (message.member.roles.find("name", message.author.id)) {
           return;
+      }
           else {
                         message.guild.createRole({
                 data: {
