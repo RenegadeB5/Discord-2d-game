@@ -47,25 +47,6 @@ client.on ('message', message => {
 
 client.on ('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();  
-  if (command === ".register") { 
-              
-                        message.guild.createRole({
-                data: {
-                    name: '0' + message.author.id,
-                    color: args[0],
-                    permissions: []
-                },
-               reason: 'Points'
-            })
-      console.log('role created');
-      let role = '0' + message.author.id         
-      member.addRole(role).catch(console.error);
-      Guild.setRolePosition('0' + message.author.id, 2)
-  }}); 
-
-client.on ('message', message => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if (command === "spam") {
         if (message.author.id === process.env.ownerID) {
