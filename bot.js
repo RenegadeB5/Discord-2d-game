@@ -13,12 +13,14 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
-	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976' && message.embeds.map(r => r.fields.map(r => r.name))[0] !== undefined) {
+	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
+		console.log(message.content);
 		let pokemon = message.embeds.map(r => r.fields.map(r => r.name))[0];
-		let uri = "mongodb+srv://RenegadeB5:sapphyres@cluster0.mongodb.net/pokemon"
+		let uri = "mongodb+srv://RenegadeB5:sapphyres@cluster0.mongodb.net/pokemon";
+		if (pokemon[5] === undefined) return;
  		console.log(pokemon);
 		console.log(pokemon[5]);
-		global.MongoClient.connect(uri, function(err, client) {
+		MongoClient.connect(uri, function(err, client) {
 			if (err) {
 				console.error('An error occurred connecting to MongoDB: ', err);
 			}
