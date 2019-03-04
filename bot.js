@@ -26,7 +26,7 @@ client.on ('message', message => {
 				const collection = client.db("pokedex").collection("pokemon");
 				collection.insertOne({ name: "Company Inc"}, function(err, res) {
 					client.close();
-				});\
+				});
 			}
 		});
 	}
