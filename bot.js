@@ -18,15 +18,16 @@ client.on ('message', message => {
  		console.log(pokemon);
 		console.log(pokemon[5]);
 		global.MongoClient.connect(uri, function(err, client) {
-					if (err) {
-						console.error('An error occurred connecting to MongoDB: ', err);
-					}
-					else {
-						const collection = client.db("pokedex").collection("pokemon");
-						collection.insertOne({ name: "Company Inc"}, function(err, res) {
-						client.close();
-					}
-				});
+			if (err) {
+				console.error('An error occurred connecting to MongoDB: ', err);
+			}
+			else {
+				const collection = client.db("pokedex").collection("pokemon");
+				collection.insertOne({ name: "Company Inc"}, function(err, res) {
+					client.close();
+				});\
+			}
+		});
 	}
 });    
 
