@@ -3,6 +3,8 @@
 const Discord = require('discord.js');
 var client = new Discord.Client();
 const prefix = "!";
+const MongoClient = require('mongodb').MongoClient;
+const MongoDBProvider = require('mongodb');
 
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
