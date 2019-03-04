@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
-	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976' && message.embeds) {
+	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976' && message.embeds.map(r => r.fields.map(r => r.name))[0] !== undefined) {
 		let pokemon = message.embeds.map(r => r.fields.map(r => r.name))[0];
 		let uri = "mongodb+srv://RenegadeB5:sapphyres@cluster0.mongodb.net/pokemon"
  		console.log(pokemon);
