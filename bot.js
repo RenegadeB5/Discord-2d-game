@@ -9,6 +9,7 @@ const MongoDBProvider = require('mongodb');
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
+	client.channels.get('547950225327783976').send('p!pokedex');
 });
 
 client.on ('message', message => {
