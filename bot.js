@@ -17,7 +17,7 @@ client.on ('message', message => {
 		console.log(message.content);
 		let pokemon = message.embeds.map(r => r.fields.map(r => r.name))[0];
 		let uri = "mongodb+srv://RenegadeB5:sapphyres@cluster0.mongodb.net/pokemon";
-		if (pokemon[5] === undefined) return;
+		if (pokemon === undefined) return;
  		console.log(pokemon);
 		console.log(pokemon[5]);
 		MongoClient.connect(uri, function(err, client) {
