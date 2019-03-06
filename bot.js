@@ -5,6 +5,7 @@ var client = new Discord.Client();
 const prefix = "!";
 const MongoClient = require('mongodb').MongoClient;
 const MongoDBProvider = require('mongodb');
+const resemble = require('resemblejs');
 
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
