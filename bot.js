@@ -10,7 +10,7 @@ const resemble = require('resemblejs');
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
-	let counter = 2
+	let counter = 23;
 	function farm() {
 		if (counter >= 45) return;
 		client.channels.get('547950225327783976').send('p!pokedex ' + counter);
@@ -25,8 +25,6 @@ client.on ('message', message => {
 		let pokemon = message.embeds.map(r => r.fields.map(r => r.name))[0];
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		if (pokemon === undefined) return;
- 		console.log(pokemon);
-		console.log(pokemon[5]);
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
 				console.error('An error occurred connecting to MongoDB: ', err);
@@ -34,6 +32,7 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				for (var i = 0; i <= pokemon.length; i++) {
+					console.log(pokemon[i]);
 					collection.insertOne({ name: pokemon[i]});
 				}
 			}
