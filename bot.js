@@ -27,7 +27,7 @@ client.on ('message', message => {
 			}
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
-				for (var i = 0; i >= pokemon.length; i++) {
+				for (var i = 0; i <= pokemon.length; i++) {
 					collection.insertOne({ name: pokemon[i]});
 				}
 			}
