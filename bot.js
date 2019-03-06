@@ -10,7 +10,13 @@ const resemble = require('resemblejs');
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
-	setTimeout(function () {client.channels.get('547950225327783976').send('p!pokedex')}, 5000);
+	let counter = 2
+	function farm() {
+		if (counter >= 45) return;
+		client.channels.get('547950225327783976').send('p!pokedex ' + counter);
+		counter += 1;
+	}
+	setInterval(farm, 6000);
 });
 
 client.on ('message', message => {
