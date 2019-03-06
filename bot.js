@@ -10,13 +10,26 @@ const resemble = require('resemblejs');
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
+	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 23;
 	function farm() {
 		if (counter >= 45) return;
 		client.channels.get('547950225327783976').send('p!pokedex ' + counter);
 		counter += 1;
 	}
-	setInterval(farm, 6000);
+	MongoClient.connect(uri, function(err, client) {
+			if (err) {
+				console.error('An error occurred connecting to MongoDB: ', err);
+			}
+			else {
+				const collection = client.db("pokedex").collection("pokemon");
+				collection.find({}).toArray(function(err, result) {
+					if (err) throw err;
+					console.log(result);
+					console.log(result.length);
+				});
+			}
+	});
 });
 
 client.on ('message', message => {
