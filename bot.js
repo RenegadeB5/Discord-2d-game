@@ -13,7 +13,7 @@ client.on('ready', () => {
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 23;
 	var api = resemble('https://static.gamespot.com/uploads/scale_super/1575/15759911/3507055-pokemonswordshield-thingswewant-promo.jpg').onComplete(function(data) {
-		console.log(data);
+		console.log(data.red);
 	});
 
 	function farm() {
