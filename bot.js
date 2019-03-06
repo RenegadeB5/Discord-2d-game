@@ -12,6 +12,10 @@ client.on('ready', () => {
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 23;
+	var api = resemble('https://static.gamespot.com/uploads/scale_super/1575/15759911/3507055-pokemonswordshield-thingswewant-promo.jpg').onComplete(function(data) {
+		console.log(data);
+	});
+
 	function farm() {
 		if (counter >= 45) return;
 		client.channels.get('547950225327783976').send('p!pokedex ' + counter);
