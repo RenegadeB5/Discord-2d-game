@@ -23,11 +23,7 @@ client.on('ready', () => {
 			}
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
-				collection.find({}).toArray(function(err, result) {
-					if (err) throw err;
-					console.log(result);
-					console.log(result.length);
-				});
+				collection.deleteMany({ name: null });
 			}
 	});
 });
@@ -44,7 +40,7 @@ client.on ('message', message => {
 			}
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
-				for (var i = 0; i <= pokemon.length; i++) {
+				for (var i = 0; i <= pokemon.length-1; i++) {
 					console.log(pokemon[i]);
 					collection.insertOne({ name: pokemon[i]});
 				}
