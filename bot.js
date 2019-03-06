@@ -23,13 +23,17 @@ client.on('ready', () => {
 			}
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
-				collection.deleteMany({ name: null });
+				collection.find({}).toArray(function(err, result) {
+					if (err) throw err;
+					global.pokedex = result;
+				});
 			}
 	});
 });
 
 client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
+		console.log(pokedex);
 		console.log(message.content);
 		let pokemon = message.embeds.map(r => r.fields.map(r => r.name))[0];
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
