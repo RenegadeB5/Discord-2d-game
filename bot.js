@@ -11,7 +11,7 @@ client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
-	let counter = 0;
+	let counter = 80;
 	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
 		console.log(data);
 	});
@@ -27,6 +27,7 @@ client.on('ready', () => {
 					global.pokedex = result;
 				});
 			}
+			client.close();
 	});
 	function farm() {
 		if (counter >= 881) return;
@@ -53,6 +54,7 @@ client.on ('message', message => {
 					console.log(data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString());
 				});
 			}
+			client.close();
 		});
 	}
 });    
