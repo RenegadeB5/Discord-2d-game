@@ -28,7 +28,7 @@ client.on('ready', () => {
 				});
 			}
 	});
-	setTimeout(function () {console.log(pokedex[0].name)}, 3000);
+	setTimeout(function () {console.log('t')}, 3000);
 	function farm() {
 		if (counter >= 881) return;
 		client.channels.get('547950225327783976').send('p!info ' + pokedex[counter].name);
@@ -41,7 +41,7 @@ client.on ('message', message => {
 		console.log(message.content);
 		let title = (message.embeds[0].title).split(' ')[3];
 		console.log(title);
-		console.log(title[0, title.length-2]);
+		console.log(title.replace('.', ''));
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
@@ -50,7 +50,7 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {
-					console.log(data.red);
+					
 				});
 			}
 		});
