@@ -25,9 +25,9 @@ client.on('ready', () => {
 				collection.find({}).toArray(function(err, result) {
 					if (err) throw err;
 					global.pokedex = result;
+					client.close();
 				});
 			}
-			client.close();
 	});
 	function farm() {
 		if (counter >= 881) return;
@@ -52,9 +52,9 @@ client.on ('message', message => {
 					let imgid = '';                                                                                                                                                                                            
 					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }});
 					console.log(data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString());
+					client.close();
 				});
 			}
-			client.close();
 		});
 	}
 });    
