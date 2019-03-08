@@ -11,20 +11,11 @@ client.on('ready', () => {
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
-	let counter = 23;
-	var api = resemble('https://media.discordapp.net/attachments/542479285827403796/553607532615172108/PokecordSpawn.jpg?width=300&height=300').onComplete(function(data) {
-		console.log(data);
-	});
+	let counter = 0;
 	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
 		console.log(data);
 	});
-	client.channels.get('547950225327783976').send('p!info Blastoise');
 
-	function farm() {
-		if (counter >= 45) return;
-		client.channels.get('547950225327783976').send('p!info Blastoise');
-		counter += 1;
-	}
 	MongoClient.connect(uri, function(err, client) {
 			if (err) {
 				console.error('An error occurred connecting to MongoDB: ', err);
@@ -37,6 +28,12 @@ client.on('ready', () => {
 				});
 			}
 	});
+	console.log(pokedex[0].name);
+	function farm() {
+		if (counter >= 881) return;
+		client.channels.get('547950225327783976').send('p!info ' + pokedex[counter].name);
+		counter += 1;
+	}
 });
 
 client.on ('message', message => {
@@ -50,6 +47,9 @@ client.on ('message', message => {
 			}
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
+				resemble(message.embeds[0].image.url).onComplete(function(data) {
+					console.log(data.red);
+				});
 			}
 		});
 	}
