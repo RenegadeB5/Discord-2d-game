@@ -39,7 +39,8 @@ client.on('ready', () => {
 client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
 		console.log(message.content);
-		console.log(message.embeds.title[15, message.embeds.title.length-1]);
+		let title = message.embeds.map(r => r.fields.map(r => r.name))[0];
+		console.log(title[15, title.length-1]);
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
