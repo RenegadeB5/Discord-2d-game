@@ -39,9 +39,7 @@ client.on('ready', () => {
 client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
 		console.log(message.content);
-		let title = (message.embeds[0].title).split(' ')[3];
-		console.log(title);
-		console.log(title.replace('.', ''));
+		let title = ((message.embeds[0].title).split(' ')[3]).replace('.', '');
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
@@ -50,7 +48,7 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {
-					
+					collection.updateOne({ name: title }, {$set: {name: title, address: "Canyon 123" }});
 				});
 			}
 		});
