@@ -43,7 +43,7 @@ client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
 		console.log(pokedex);
 		console.log(message.content);
-		console.log(message.embeds.image.url);
+		console.log(message.embeds[0].image.url);
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
