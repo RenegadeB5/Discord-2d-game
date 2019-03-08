@@ -33,7 +33,7 @@ client.on('ready', () => {
 		client.channels.get('547950225327783976').send('p!info ' + pokedex[counter].name);
 		counter += 1;
 	}
-	setTimeout(function () {setInterval(farm, 6000)}, 3000);
+	setTimeout(function () {setInterval(farm, 6000) && console.log(pokedex)}, 3000);
 });
 
 client.on ('message', message => {
@@ -48,8 +48,9 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {
-					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red + data.green + data.blue + data.alpha }});
-					console.log(data.red + data.green + data.blue + data.alpha);
+					let imgid = '';                                                                                                                                                                                           
+					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red.toString() + data.greendata.red.toString() + data.bluedata.red.toString() + data.alphadata.red.toString() }});
+					console.log(data.red.toString() + data.greendata.red.toString() + data.bluedata.red.toString() + data.alphadata.red.toString());
 				});
 			}
 		});
