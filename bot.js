@@ -48,9 +48,9 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {
-					let imgid = '';                                                                                                                                                                                           
-					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red.toString() + data.greendata.red.toString() + data.bluedata.red.toString() + data.alphadata.red.toString() }});
-					console.log(data.red.toString() + data.greendata.red.toString() + data.bluedata.red.toString() + data.alphadata.red.toString());
+					let imgid = '';                                                                                                                                                                                            
+					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }});
+					console.log(data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString());
 				});
 			}
 		});
