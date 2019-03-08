@@ -12,7 +12,10 @@ client.on('ready', () => {
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 23;
-	var api = resemble('https://static.gamespot.com/uploads/scale_super/1575/15759911/3507055-pokemonswordshield-thingswewant-promo.jpg').onComplete(function(data) {
+	var api = resemble('https://media.discordapp.net/attachments/542479285827403796/553478705754800128/PokecordSpawn.jpg?width=300&height=300').onComplete(function(data) {
+		console.log(data);
+	});
+	var api2 = resemble('https://i.imgur.com/Q4sZDZj.png').onComplete(function(data) {
 		console.log(data);
 	});
 	client.channels.get('547950225327783976').send('p!info Blastoise');
@@ -40,7 +43,7 @@ client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
 		console.log(pokedex);
 		console.log(message.content);
-		console.log(message.embeds);
+		console.log(message.embeds.image.url);
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
