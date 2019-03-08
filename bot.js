@@ -48,7 +48,8 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {
-					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red + data.green + data.blue }});
+					collection.updateOne({ name: title }, {$set: {name: title, imgid: data.red + data.green + data.blue + data.alpha }});
+					console.log(data.red + data.green + data.blue + data.alpha);
 				});
 			}
 		});
