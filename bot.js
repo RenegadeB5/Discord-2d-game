@@ -29,6 +29,7 @@ client.on('ready', () => {
 				});
 			}
 	});
+	setTimeout(function () {console.log(pokedex)}, 3000);
 	function farm() {
 		if (counter >= 881) return;
 		client.channels.get('547950225327783976').send('p!info ' + pokedex[counter].name);
