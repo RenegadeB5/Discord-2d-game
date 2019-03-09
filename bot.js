@@ -59,7 +59,7 @@ client.on ('message', message => {
 						if (err) throw err;
 						if (result[0] === undefined) return;
 						let rares = "Articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (Tapu Koko) (Tapu Lele) (Tapu Bulu) (Tapu Fini) cosmog cosmoem solgaleo Lunala necrozma";
-						let timer = (Math.floor(Math.random() * 3) + 2) * 1000;
+						let timer = (Math.floor(Math.random() * 2) + 1) * 1000;
 						if (rares.includes(result[0].name)) {
 							global.client.channels.get('382337634770616321').send('p!catch ' + (result[0].name).toLowerCase());
 						}
