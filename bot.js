@@ -34,9 +34,7 @@ client.on('ready', () => {
 client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
 		if (message.content.length >= 1) return;
-		console.log(message.content);
 		let title = ((message.embeds[0].title).slice(15)).replace('.', '');
-		console.log(title);
 		let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 		MongoClient.connect(uri, function(err, client) {
 			if (err) {
@@ -48,7 +46,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						console.log(result[0].name);
+						client.channels.get('547950225327783976').send(result[0].name);
 						client.close();
 					});
 				});
