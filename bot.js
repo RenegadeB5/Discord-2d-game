@@ -6,6 +6,7 @@ const prefix = "!";
 const MongoClient = require('mongodb').MongoClient;
 const MongoDBProvider = require('mongodb');
 const resemble = require('resemblejs');
+const request = require('request');
 
 client.on('ready', () => {
 	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
