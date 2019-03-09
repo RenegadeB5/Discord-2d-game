@@ -52,7 +52,7 @@ client.on ('message', message => {
 						if (err) throw err;
 						if (result[0] === undefined) return;
 						let timer = (Math.floor(Math.random() * 2) + 1) * 1000;
-						setTimeout(function () {global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
+						global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase());
 						client.close();
 					});
 				});
