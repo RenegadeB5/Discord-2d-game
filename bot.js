@@ -9,7 +9,7 @@ const resemble = require('resemblejs');
 const request = require('request');
 
 client.on('ready', () => {
-	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/Vh56X5", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
@@ -59,9 +59,13 @@ client.on ('message', message => {
 						if (err) throw err;
 						if (result[0] === undefined) return;
 						let rares = "Articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (Tapu Koko) (Tapu Lele) (Tapu Bulu) (Tapu Fini) cosmog cosmoem solgaleo Lunala necrozma";
-						let timer = (Math.floor(Math.random() * 4) + 1) * 1000;
-						setTimeout(function () {console.log(timer)}, timer);
-						global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase())
+						let timer = (Math.floor(Math.random() * 3) + 2) * 1000;
+						if (rares.includes(result[0].name)) {
+							global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase());
+						}
+						else {
+							setTimeout(function () {global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
+						}
 						client.close();
 					});
 				});
