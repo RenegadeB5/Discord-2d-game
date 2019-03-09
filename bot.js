@@ -12,7 +12,6 @@ client.on('ready', () => {
 	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
-	client.channels.get('542479285827403796').send('ill slow down to give u noobs a chance ;)')
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 0;
 	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
@@ -36,6 +35,7 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
+	if (message.guild === null && message.author.id === '259368804293935104') {client.channels.get('542479285827403796').send(message.content)}
 	if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
