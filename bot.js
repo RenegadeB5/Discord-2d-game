@@ -40,9 +40,9 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 		if (message.content.includes('pokebot')) return;
-		client.channels.get('382337634770616321').send(message.content);
+		client.channels.get('386324037552308224').send(message.content);
 	}
-	if (message.author.id === '365975655608745985' && message.channel.id === '382337634770616321') {
+	if (message.author.id === '365975655608745985' && message.channel.id === '386324037552308224') {
 		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
@@ -61,10 +61,10 @@ client.on ('message', message => {
 						let rares = "Articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (Tapu Koko) (Tapu Lele) (Tapu Bulu) (Tapu Fini) cosmog cosmoem solgaleo Lunala necrozma";
 						let timer = (Math.floor(Math.random() * 2) + 1) * 1000;
 						if (rares.includes(result[0].name)) {
-							global.client.channels.get('382337634770616321').send('p!catch ' + (result[0].name).toLowerCase());
+							global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase());
 						}
 						else {
-							setTimeout(function () {global.client.channels.get('382337634770616321').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
+							setTimeout(function () {global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
 						}
 						client.close();
 					});
