@@ -50,7 +50,8 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						global.client.channels.get('542479285827403796').send('p!catch ' + result[0].name);
+						let timer = (Math.floor(Math.random() * 3)) * 1000;
+						setTimeout(function () {global.client.channels.get('542479285827403796').send('p!catch ' + result[0].name)}, timer);
 						client.close();
 					});
 				});
