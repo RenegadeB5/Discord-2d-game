@@ -18,6 +18,7 @@ client.on('ready', () => {
 		console.log(data);
 	});
 	global.client = client;
+	global.paused === true;
 
 	MongoClient.connect(uri, function(err, client) {
 			if (err) {
@@ -35,8 +36,13 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
-	if (message.guild === null && message.author.id === '259368804293935104') {client.channels.get('542479285827403796').send(message.content)}
+	if (message.guild === null && message.author.id === '259368804293935104') {
+		client.channels.get('542479285827403796').send(message.content);
+		if (message.content.includes('pokebot pause')) {global.paused = true}
+		if (message.content.includes('pokebot start')) {global.paused = false}
+	}
 	if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
+		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
 		let title = ((message.embeds[0].title).slice(15)).replace('.', '');
