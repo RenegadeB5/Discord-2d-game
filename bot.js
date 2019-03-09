@@ -39,6 +39,7 @@ client.on('ready', () => {
 
 client.on ('message', message => {
 	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
+		if (message.content.length >= 1) return;
 		console.log(message.content);
 		let title = ((message.embeds[0].title).slice(15)).replace('.', '');
 		console.log(title);
