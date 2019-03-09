@@ -41,7 +41,7 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 	}
-	if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
+	else if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
 		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
