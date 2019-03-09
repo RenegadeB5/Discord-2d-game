@@ -14,7 +14,7 @@ client.on('ready', () => {
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 0;
-	var api2 = resemble('https://cdn.discordapp.com/attachments/542479285827403796/553996306071289856/PokecordSpawn.jpg').onComplete(function(data) {
+	var api2 = resemble('https://i.imgur.com/W8bEoEL.png').onComplete(function(data) {
 		console.log(data);
 	});
 	global.client = client;
@@ -58,6 +58,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
+						let rares = "Articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (Tapu Koko) (Tapu Lele) (Tapu Bulu) (Tapu Fini) cosmog cosmoem solgaleo Lunala necrozma";
 						let timer = (Math.floor(Math.random() * 4) + 1) * 1000;
 						setTimeout(function () {console.log(timer)}, timer);
 						global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase())
