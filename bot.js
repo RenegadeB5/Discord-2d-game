@@ -15,6 +15,7 @@ client.on('ready', () => {
 	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
 		console.log(data);
 	});
+	global.client = client;
 
 	MongoClient.connect(uri, function(err, client) {
 			if (err) {
@@ -46,7 +47,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						client.channels.get('547950225327783976').send(result[0].name);
+						global.client.channels.get('547950225327783976').send(result[0].name);
 						client.close();
 					});
 				});
