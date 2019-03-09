@@ -12,7 +12,7 @@ client.on('ready', () => {
 	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
-	client.channels.get('542479285827403796').send('Fine I Wont Capitalize, AND IM no BOT :rage: :rage:')
+	client.channels.get('542479285827403796').send('ill slow down to give u noobs a chance ;)')
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 0;
 	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
@@ -51,7 +51,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						let timer = (Math.floor(Math.random() * 3) + 1) * 1000;
+						let timer = (Math.floor(Math.random() * 4) + 2) * 1000;
 						setTimeout(function () {global.client.channels.get('542479285827403796').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
 						client.close();
 					});
