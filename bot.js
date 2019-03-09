@@ -14,7 +14,7 @@ client.on('ready', () => {
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	let counter = 0;
-	var api2 = resemble('https://images-ext-1.discordapp.net/external/lN1NXBbJ2C2qEpOT2vuNRhJUQrAvwGIf1GdEMJVo0zs/https/i.imgur.com/pnCnErB.png?width=300&height=300').onComplete(function(data) {
+	var api2 = resemble('https://cdn.discordapp.com/attachments/542479285827403796/553996306071289856/PokecordSpawn.jpg').onComplete(function(data) {
 		console.log(data);
 	});
 	global.client = client;
