@@ -21,6 +21,7 @@
 		"mongodb": "^3.1.6",
 		"mongodb-core": "^3.1.5",
 		"safe-buffer": "^5.1.2",
-	  	"resemblejs": "^3.0.2"
+	  	"resemblejs": "^3.0.2",
+	        "request": "2.81.0"
 	}
 }
