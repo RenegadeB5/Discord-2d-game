@@ -47,7 +47,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						global.client.channels.get('547950225327783976').send(result[0].name);
+						global.client.channels.get('547950225327783976').send('p!catch ' + result[0].name);
 						client.close();
 					});
 				});
