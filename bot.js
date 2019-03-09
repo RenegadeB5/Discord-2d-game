@@ -8,6 +8,7 @@ const MongoDBProvider = require('mongodb');
 const resemble = require('resemblejs');
 
 client.on('ready', () => {
+	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
@@ -33,7 +34,7 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
-	if (message.author.id === '365975655608745985' && message.channel.id === '547950225327783976') {
+	if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
 		let title = ((message.embeds[0].title).slice(15)).replace('.', '');
@@ -48,7 +49,7 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						global.client.channels.get('547950225327783976').send('p!catch ' + result[0].name);
+						global.client.channels.get('542479285827403796').send('p!catch ' + result[0].name);
 						client.close();
 					});
 				});
