@@ -18,7 +18,7 @@ client.on('ready', () => {
 		console.log(data);
 	});
 	global.client = client;
-	global.paused === true;
+	global.paused = true;
 
 	MongoClient.connect(uri, function(err, client) {
 			if (err) {
