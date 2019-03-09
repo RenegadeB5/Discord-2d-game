@@ -45,7 +45,7 @@ client.on ('message', message => {
 			else {
 				const collection = client.db("pokedex").collection("pokemon");
 				resemble(message.embeds[0].image.url).onComplete(function(data) {                                                                                                                                                                                          
-					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }}).toArray(function(err, result) {
+					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
 						console.log(result[0].name);
