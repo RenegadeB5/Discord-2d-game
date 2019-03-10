@@ -60,12 +60,15 @@ client.on ('message', message => {
 						if (result[0] === undefined) return;
 						let rares = "Articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (Tapu Koko) (Tapu Lele) (Tapu Bulu) (Tapu Fini) cosmog cosmoem solgaleo Lunala necrozma";
 						let timer = (Math.floor(Math.random() * 2) + 1) * 1000;
+						global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase());
+						/*
 						if (rares.includes(result[0].name)) {
 							global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase());
 						}
 						else {
 							setTimeout(function () {global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase())}, timer);
 						}
+						*/
 						client.close();
 					});
 				});
