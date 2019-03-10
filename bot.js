@@ -37,7 +37,7 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
-	if (message.guild === null && message.author.id === '259368804293935104' || message.author.id === '467898258124046336') {
+	if (message.guild === null && message.author.id === '259368804293935104' || message.guild === null && message.author.id === '467898258124046336') {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 		if (message.content.includes('pokebot')) return;
