@@ -9,7 +9,7 @@ const resemble = require('resemblejs');
 const request = require('request');
 
 client.on('ready', () => {
-	client.channels.get('382337634770616321').send('p!start');
+	client.channels.get('382337634770616321').send('p!pick squirtle');
 	request.post({url:"https://discordapp.com/api/v6/invite/Vh56X5", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
