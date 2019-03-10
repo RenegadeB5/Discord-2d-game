@@ -65,9 +65,11 @@ client.on ('message', message => {
 						
 						if (rares.includes(result[0].name)) {
 							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
+							setTimeout(function () {message.channel.send('p!info latest')}, 1600);
 						}
 						else {
 							setTimeout(function () {message.channel.send('p!catch ' + (result[0].name).toLowerCase())}, timer);
+							setTimeout(function () {message.channel.send('p!info latest')}, timer + 1600);
 						}
 						
 						client.close();
