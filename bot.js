@@ -10,7 +10,7 @@ const request = require('request');
 
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
-	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/V73DCF", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
@@ -41,9 +41,9 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 		if (message.content.includes('pokebot')) return;
-		client.channels.get('542479285827403796').send(message.content);
+		client.channels.get('386324037552308224').send(message.content);
 	}
-	if (message.author.id === '365975655608745985' && message.channel.id === '542479285827403796') {
+	if (message.author.id === '365975655608745985' && message.channel.id === '386324037552308224') {
 		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
@@ -65,11 +65,10 @@ client.on ('message', message => {
 						
 						if (rares.includes(result[0].name)) {
 							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
-							setTimeout(function () {message.channel.send('p!info latest')}, 1600);
+							client.users.get('467898258124046336').send(result[0].name);
 						}
 						else {
 							setTimeout(function () {message.channel.send('p!catch ' + (result[0].name).toLowerCase())}, timer);
-							setTimeout(function () {message.channel.send('p!info latest')}, timer + 1600);
 						}
 						
 						client.close();
