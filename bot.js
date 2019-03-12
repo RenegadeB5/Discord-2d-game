@@ -43,7 +43,7 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot')) return;
 		client.channels.get('382337634770616321').send(message.content);
 	}
-	if (message.author.id === '365975655608745985' && message.channel.id === '382337634770616321') {
+	if (message.author.id === '365975655608745985') {
 		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
