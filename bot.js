@@ -63,7 +63,7 @@ client.on ('message', message => {
 						let timer = (Math.floor(Math.random() * 3) + 2) * 1000;
 						let url = "https://discordapp.com/api/v6/channels/" + message.channel.id + "/typing";
 						request.post({url:url, headers: {authorization: process.env.BOT_TOKEN}}); 
-						global.client.channels.get('386324037552308224').send('p!catch ' + (result[0].name).toLowerCase());
+						message.channel.send('p!catch ' + (result[0].name).toLowerCase());
 						
 						/*if (rares.includes(result[0].name)) {
 							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
