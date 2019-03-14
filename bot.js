@@ -10,7 +10,7 @@ const request = require('request');
 
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
-	request.post({url:"https://discordapp.com/api/v6/invite/V73DCF", headers: {authorization: process.env.BOT_TOKEN}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
