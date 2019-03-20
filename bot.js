@@ -37,7 +37,7 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 		if (message.content.includes('pokebot')) return;
-		client.channels.get('382337634770616321').send(message.content);
+		client.channels.get('547834242948661248').send(message.content);
 	}
 	if (message.author.id === '547834242948661248') {
 		if (global.paused === true) return;
