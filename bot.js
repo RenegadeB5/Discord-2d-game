@@ -8,11 +8,10 @@ const MongoDBProvider = require('mongodb');
 const resemble = require('resemblejs');
 const request = require('request');
 const tokens = process.env.TOKENS.split(",");
-
+let count = 0;
 function spam() {
-	let count = 0;
 	if (count === 4) count = 0;
-	request.post({url:"https://discordapp.com/api/v6/channels/547831871518801942/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
+	request.post({url:"https://discordapp.com/api/v6/channels/547834242948661248/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	count++;
 };
 setInterval(spam, 1000);
