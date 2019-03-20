@@ -12,7 +12,7 @@ const tokens = process.env.TOKENS.split(",");
 function spam() {
 	let count = 0;
 	if (count === 4) count = 0;
-	request.post({url:"https://discordapp.com/api/v6/channels/" + process.env.channelID + "/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
+	request.post({url:"https://discordapp.com/api/v6/channels/547831871518801942/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	count++;
 };
 //setInterval(spam, 1000);
@@ -39,7 +39,7 @@ client.on ('message', message => {
 		if (message.content.includes('pokebot')) return;
 		client.channels.get('382337634770616321').send(message.content);
 	}
-	if (message.author.id === '365975655608745985' && message.guild.id === '290843998296342529') {
+	if (message.author.id === '547834242948661248') {
 		if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
