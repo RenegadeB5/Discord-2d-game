@@ -14,7 +14,7 @@ function spam() {
 	request.post({url:"https://discordapp.com/api/v6/channels/557948110089748500/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	count++;
 };
-setTimeout(function () {setInterval(spam, 300)}, 10000);
+//setTimeout(function () {setInterval(spam, 300)}, 10000);
 
 for (const item of tokens) {
 	request.post({url:"https://discordapp.com/api/v6/invite/GU4kaXS", headers: {authorization: item}}); 
@@ -39,11 +39,11 @@ client.on ('message', message => {
 		client.channels.get('547834242948661248').send(message.content);
 	}
 	if (message.author.id === '365975655608745985') {
-		/*resemble(message.embeds[0].image.url).onComplete(function(data) {
+		resemble(message.embeds[0].image.url).onComplete(function(data) {
 			console.log(data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString());
 			console.log(((message.embeds[0].title).slice(15)).replace('.', ''));
-		});*/
-		if (global.paused === true) return;
+		});
+		/*if (global.paused === true) return;
 		if (message.content.length >= 1) return;
 		if (!(message.embeds[0].title).includes('A wild pokémon has appeared!')) return;
 		let title = ((message.embeds[0].title).slice(15)).replace('.', '');
@@ -67,20 +67,20 @@ client.on ('message', message => {
 						if (rares.includes(result[0].name)) {
 							client.users.get('467898258124046336').send(result[0].name + ' has been caught!');
 						}
-						/*if (rares.includes(result[0].name)) {
+						if (rares.includes(result[0].name)) {
 							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
 							client.users.get('467898258124046336').send(result[0].name);
 						}
 						else {
 							setTimeout(function () {message.channel.send('p!catch ' + (result[0].name).toLowerCase())}, timer);
-						}*/
+						}
 						
 						
 						client.close();
 					});
 				});
 			}
-		});
+		});*/
 	}
 });    
 
