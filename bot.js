@@ -41,7 +41,7 @@ client.on ('message', message => {
 	if (message.author.id === '365975655608745985') {
 		resemble(message.embeds[0].image.url).onComplete(function(data) {
 			console.log(data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString());
-			console.log((message.embeds[0].title).slice(15)).replace('.', '');
+			console.log(((message.embeds[0].title).slice(15)).replace('.', ''));
 		});
 		/*if (global.paused === true) return;
 		if (message.content.length >= 1) return;
