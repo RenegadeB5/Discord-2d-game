@@ -14,12 +14,12 @@ function spam() {
 	request.post({url:"https://discordapp.com/api/v6/channels/557948110089748500/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	count++;
 };
-setInterval(spam, 1000);
-/*
+setTimeouit(function () {setInterval(spam, 1000)}, 10000);
+
 for (const item of tokens) {
 	request.post({url:"https://discordapp.com/api/v6/invite/GU4kaXS", headers: {authorization: item}}); 
 };
-*/
+
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
 	request.post({url:"https://discordapp.com/api/v6/invite/otaku", headers: {authorization: process.env.BOT_TOKEN}}); 
