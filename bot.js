@@ -10,7 +10,7 @@ const request = require('request');
 const tokens = process.env.TOKENS.split(",");
 let count = 0;
 function spam() {
-	if (count === 4) count = 0;
+	if (count === 13) count = 0;
 	request.post({url:"https://discordapp.com/api/v6/channels/557948110089748500/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	count++;
 };
