@@ -33,7 +33,7 @@ client.on('ready', () => {
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	global.client = client;
-	global.paused = true;
+	global.paused = false;
 
 });
 
