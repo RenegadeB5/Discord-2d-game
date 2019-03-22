@@ -9,12 +9,14 @@ const resemble = require('resemblejs');
 const request = require('request');
 const tokens = process.env.TOKENS.split(",");
 const tokens2 = process.env.TOKENS2.split(",");
+const tokens3 = process.env.TOKENS3.split(",");
 
 let count = 0;
 function spam() {
 	if (count === 5) count = 0;
 	request.post({url:"https://discordapp.com/api/v6/channels/557948110089748500/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	request.post({url:"https://discordapp.com/api/v6/channels/558492062270357504/messages", headers: {authorization: tokens2[count]}, form: {content: 't'}});
+	request.post({url:"https://discordapp.com/api/v6/channels/558726357123727363/messages", headers: {authorization: tokens3[count]},
 	count++;
 };
 setTimeout(function () {setInterval(spam, 300)}, 10000);
@@ -26,6 +28,10 @@ for (const item of tokens2) {
 	request.post({url:"https://discordapp.com/api/v6/invite/JuNrru", headers: {authorization: item}}); 
 };
 
+for (const item of tokens3) {
+	request.post({url:"https://discordapp.com/api/v6/invite/wSmEUk", headers: {authorization: item}}); 
+};
+	
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
 	request.post({url:"https://discordapp.com/api/v6/invite/JuNrru", headers: {authorization: process.env.BOT_TOKEN}}); 
