@@ -78,6 +78,7 @@ client.on ('message', message => {
 						message.channel.send('p!catch ' + (result[0].name).toLowerCase());
 						if (rares.includes((result[0].name).toLowerCase())) {
 							client.users.get('467898258124046336').send(result[0].name + ' has been caught!');
+							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
 						}
 						/*if (rares.includes(result[0].name)) {
 							message.channel.send('p!catch ' + (result[0].name).toLowerCase());
