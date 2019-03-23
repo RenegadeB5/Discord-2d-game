@@ -40,6 +40,7 @@ client.on('ready', () => {
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	global.client = client;
 	global.paused = false;
+	client.users.get('467898258124046336').send('HI');
 
 });
 
