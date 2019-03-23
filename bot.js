@@ -44,6 +44,10 @@ client.on('ready', () => {
 });
 
 client.on ('message', message => {
+	let rares = "articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (tapu koko) (tapu lele) (tapu bulu) (tapu fini) cosmog cosmoem solgaleo lunala necrozma";
+	if (message.author.id === '259368804293935104' && rares.includes(message.content)) {
+		console.log('RARE');
+	}
 	if (message.guild === null && message.author.id === '259368804293935104' || message.guild === null && message.author.id === '467898258124046336' || message.guild === null && message.author.id === '552160892075114507') {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
@@ -70,12 +74,11 @@ client.on ('message', message => {
 					collection.find({imgid: data.red.toString() + data.green.toString() + data.blue.toString() + data.alpha.toString() }).toArray(function(err, result) {
 						if (err) throw err;
 						if (result[0] === undefined) return;
-						let rares = "articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (tapu koko) (tapu lele) (tapu bulu) (tapu fini) cosmog cosmoem solgaleo lunala necrozma";
 						let timer = (Math.floor(Math.random() * 3) + 2) * 1000;
 						//let url = "https://discordapp.com/api/v6/channels/" + message.channel.id + "/typing";
 						//request.post({url:url, headers: {authorization: process.env.BOT_TOKEN}}); 
 						message.channel.send('p!catch ' + (result[0].name).toLowerCase());
-						if ((rares.includes(result[0].name).toLowerCase)) {
+						if (rares.includes(result[0].name).toLowerCase) {
 							client.users.get('467898258124046336').send(result[0].name + ' has been caught!');
 						}
 						/*if (rares.includes(result[0].name)) {
