@@ -10,6 +10,8 @@ const request = require('request');
 const tokens = process.env.TOKENS.split(",");
 const tokens2 = process.env.TOKENS2.split(",");
 const tokens3 = process.env.TOKENS3.split(",");
+const tokens4 = process.env.TOKENS4.split(",");
+const tokens5 = process.env.TOKENS5.split(",");
 
 let count = 0;                                                  														
 function spam() {
