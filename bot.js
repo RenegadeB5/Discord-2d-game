@@ -43,7 +43,7 @@ for (const item of tokens5) {
 	
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
-	request.post({url:"https://discordapp.com/api/v6/invite/F3NK8n", headers: {authorization: process.env.BOT_TOKEN}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/ZdVCjG", headers: {authorization: process.env.BOT_TOKEN}}); 
 	request.post({url:"https://discordapp.com/api/v6/invite/748tzC", headers: {authorization: process.env.BOT_TOKEN}});
 	request.post({url:"https://discordapp.com/api/v6/invite/QRxrV4", headers: {authorization: process.env.BOT_TOKEN}});
 	request.post({url:"https://discordapp.com/api/v6/invite/cR28JC", headers: {authorization: process.env.BOT_TOKEN}});
