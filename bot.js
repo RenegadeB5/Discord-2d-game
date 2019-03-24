@@ -17,6 +17,8 @@ function spam() {
 	request.post({url:"https://discordapp.com/api/v6/channels/557948110089748500/messages", headers: {authorization: tokens[count]}, form: {content: 't'}});
 	request.post({url:"https://discordapp.com/api/v6/channels/558492062270357504/messages", headers: {authorization: tokens2[count]}, form: {content: 't'}});
 	request.post({url:"https://discordapp.com/api/v6/channels/558726357123727363/messages", headers: {authorization: tokens3[count]}, form: {content: 't'}});
+	request.post({url:"https://discordapp.com/api/v6/channels/559033871434383380/messages", headers: {authorization: tokens4[count]}, form: {content: 't'}});
+	request.post({url:"https://discordapp.com/api/v6/channels/559035339038130177/messages", headers: {authorization: tokens5[count]}, form: {content: 't'}});
 	count++;
 };
 setTimeout(function () {setInterval(spam, 300)}, 10000);
@@ -30,6 +32,12 @@ for (const item of tokens2) {
 
 for (const item of tokens3) {
 	request.post({url:"https://discordapp.com/api/v6/invite/wSmEUk", headers: {authorization: item}}); 
+};
+for (const item of tokens4) {
+	request.post({url:"https://discordapp.com/api/v6/invite/F3NK8n", headers: {authorization: item}}); 
+};
+for (const item of tokens5) {
+	request.post({url:"https://discordapp.com/api/v6/invite/748tzC", headers: {authorization: item}}); 
 };
 	
 client.on('ready', () => {
