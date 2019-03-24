@@ -45,12 +45,13 @@ client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
 	request.post({url:"https://discordapp.com/api/v6/invite/F3NK8n", headers: {authorization: process.env.BOT_TOKEN}}); 
 	request.post({url:"https://discordapp.com/api/v6/invite/748tzC", headers: {authorization: process.env.BOT_TOKEN}});
+	request.post({url:"https://discordapp.com/api/v6/invite/JuNrru", headers: {authorization: process.env.BOT_TOKEN}});
+	request.post({url:"https://discordapp.com/api/v6/invite/VNhJZq", headers: {authorization: process.env.BOT_TOKEN}});
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
 	global.client = client;
 	global.paused = false;
-	client.users.get('467898258124046336').send('HI');
 
 });
 
