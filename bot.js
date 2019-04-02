@@ -57,7 +57,7 @@ client.on('ready', () => {
 
 client.on ('message', message => {
 	let rares = "articuno zapdos moltres mewtwo mew raikou entei suicune ho-oh lugia regirock regice registeel latios latias kyogre groudon rayquaza yuxie mesprit azelf dialga palkia giratina cresselia darkrai heatran regigigas cobalion terrakion virizion keldeo tornadus landorus thundurus reshiram zekrom kyurem xerneas yveltal zygarde (type: null) silvally (tapu koko) (tapu lele) (tapu bulu) (tapu fini) cosmog cosmoem solgaleo lunala necrozma";
-	if (message.guild === null && message.author.id === '259368804293935104' || message.guild === null && message.author.id === '467898258124046336' || message.guild === null && message.author.id === '552160892075114507') {
+	if (message.guild === null && message.author.id === '259368804293935104' || message.guild === null && message.author.id === '467898258124046336' || message.guild === null && message.author.id === '559363254410018826') {
 		if (message.content.includes('pokebot pause')) {global.paused = true}
 		if (message.content.includes('pokebot start')) {global.paused = false}
 		if (message.content.includes('pokebot')) return;
