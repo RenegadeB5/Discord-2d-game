@@ -26,27 +26,27 @@ function spam() {
 setTimeout(function () {setInterval(spam, 300)}, 10000);
 
 for (const item of tokens) {
-	request.post({url:"https://discordapp.com/api/v6/invite/GU4kaXS", headers: {authorization: item}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/y7sueFB", headers: {authorization: item}}); 
 };
 for (const item of tokens2) {
-	request.post({url:"https://discordapp.com/api/v6/invite/JuNrru", headers: {authorization: item}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/xs7a3wJ", headers: {authorization: item}}); 
 };
 /*for (const item of tokens3) {
 	request.post({url:"https://discordapp.com/api/v6/invite/wSmEUk", headers: {authorization: item}}); 
 };*/
 for (const item of tokens4) {
-	request.post({url:"https://discordapp.com/api/v6/invite/F3NK8n", headers: {authorization: item}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/xq7zBj7", headers: {authorization: item}}); 
 };
 for (const item of tokens5) {
-	request.post({url:"https://discordapp.com/api/v6/invite/748tzC", headers: {authorization: item}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/m9eGVKz", headers: {authorization: item}}); 
 };
 	
 client.on('ready', () => {
 	//client.channels.get('542479285827403796').send('p!pick squirtle');
-	request.post({url:"https://discordapp.com/api/v6/invite/ZdVCjG", headers: {authorization: process.env.BOT_TOKEN}}); 
-	request.post({url:"https://discordapp.com/api/v6/invite/748tzC", headers: {authorization: process.env.BOT_TOKEN}});
-	request.post({url:"https://discordapp.com/api/v6/invite/QRxrV4", headers: {authorization: process.env.BOT_TOKEN}});
-	request.post({url:"https://discordapp.com/api/v6/invite/cR28JC", headers: {authorization: process.env.BOT_TOKEN}});
+	request.post({url:"https://discordapp.com/api/v6/invite/y7sueFB", headers: {authorization: process.env.BOT_TOKEN}}); 
+	request.post({url:"https://discordapp.com/api/v6/invite/xs7a3wJ", headers: {authorization: process.env.BOT_TOKEN}});
+	request.post({url:"https://discordapp.com/api/v6/invite/xq7zBj7", headers: {authorization: process.env.BOT_TOKEN}});
+	request.post({url:"https://discordapp.com/api/v6/invite/m9eGVKz", headers: {authorization: process.env.BOT_TOKEN}});
 	client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
 	console.log('successfully Logged In As poke-selfbot!');
 	let uri = "mongodb+srv://RenegadeB5:" + process.env.dbpassword + "@cluster0-l1qqw.mongodb.net/test?retryWrites=true";
