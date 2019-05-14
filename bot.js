@@ -8,6 +8,7 @@ const request = require('request');
 client.on('ready', () => {
 	console.log('Successfully logged in as a discord game bot!');
 	//client.channels.get('576427384262361128').send('.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                                                                 .\n.                    🛦                                        .');						
+	client.channels.get('576427384262361128').fetchMessages().then(message => console.log(message));
 });
 
 client.on ('message', message => {
